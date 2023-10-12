@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <title>My App</title>
+    <style>html,
+        body {
+          height: 100%;
+        }
+        
+        body {
+          padding-top: 5rem;
+          background-image: url("assets/img/login_wa.jpg");
+          background-repeat: no-repeat;
+          background-size: 1600px;
+        }
+        
+        .form-signin {
+          max-width: 25rem;
+          margin: auto;
+        }
+        textarea{
+          margin: 5px;
+        }
+        </style>
+  </head>
+  <body class="text-center">
+    <main class="form-signin">
+      <script>
+        function validate() {
+          var uname = document.reg_form.usname.value;
+          var pass = document.reg_form.pwd.value;
+          var pattern = /^[a-zA-Z0-9._%+-]+@veltech\.edu\.in$/;
+      
+          if(uname.length <=0){
+            alert("Email required");
+            return false
+          }
+          else if(uname.length>0){
+            if(pattern.test(uname)){}
+            else{
+              alert("Only Veltech Students can access")
+            }
+
+          }
+          else if(pass==null){
+            alert("Password Required");
+            return false;
+          }
+          else if(pass.length <=8){
+            alert("Password must contain atleast 8 characters");
+            return false;
+          }
+        }
+      </script>
+      <form name="reg_form" onsubmit="return validate()" action="index.html">
+        <img class="mb-4" src="C:\Users\Student\Downloads\lo_go.png" alt="" width="100%">
+        <h1 class="h3 mb-3 fw-normal"><b>User Login</b></h1>
+
+        <div class="form-floating">
+          <input type="email" class="form-control" name="usname" id="username" placeholder="name@veltech.edu.in">
+          <label>Email address</label>
+        </div>
+        <div class="form-floating">
+          
+          <input type="password" class="form-control" name="pwd" id="password" placeholder="Password">
+          <label>Password</label>
+        </div>
+
+        <button class="w-100 btn btn-lg btn-primary mt-3" type="submit" href="index.html">Login</button>
+        <p></p><a href="signup.html">New User? Create account...</a></p>
+        </form>
+    </main>
+     </body>
+</html>
